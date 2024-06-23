@@ -1,4 +1,4 @@
-package com.porasl.notificationServices.service;
+package com.porasl.notificationServices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
