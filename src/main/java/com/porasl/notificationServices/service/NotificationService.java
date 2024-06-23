@@ -1,13 +1,12 @@
 package com.porasl.notificationServices.service;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.model.NotificationMessage;
+import org.springframework.stereotype.Service;
 
-@SpringBootApplication
+@Service
 public class NotificationService {
 
-	public static void main(String[] args) {
-		SpringApplication.run(NotificationService.class, args);
-	}
-
+    public NotificationMessage sendNotification(NotificationMessage message) {
+        return new NotificationMessage("Hello, " + message.getContent() + "!");
+    }
 }
