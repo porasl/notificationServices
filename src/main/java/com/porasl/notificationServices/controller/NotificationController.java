@@ -1,7 +1,7 @@
 package com.porasl.notificationServices.controller;
 
 import com.porasl.notificationServices.model.NotificationMessage;
-import com.porasl.notificationServices.service.NotificationService;
+import com.porasl.notificationServices.service.ConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class NotificationController {
 
     @Autowired
-    private NotificationService notificationService;
+    private ConfigService notificationService;
 
-    @MessageMapping("/send")
-    @SendTo("/topic/notifications")
-    public NotificationMessage send(NotificationMessage message) {
-        return notificationService.sendNotification(message);
-    }
+//    @MessageMapping("/send")
+//    @SendTo("/topic/notifications")
+//    public NotificationMessage send(NotificationMessage message) {
+//        return notificationService.sendNotification(message);
+//    }
 }

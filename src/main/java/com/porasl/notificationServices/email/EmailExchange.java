@@ -1,4 +1,4 @@
-package com.inrik.email;
+package com.porasl.notificationServices.email;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,8 +17,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.inrik.domain.ConfigInfo;
-import com.inrik.service.ConfigService;
+import com.porasl.notificationServices.config.Config;
+import com.porasl.notificationServices.service.ConfigService;
 
 public class EmailExchange {
 
@@ -32,7 +32,7 @@ public class EmailExchange {
 
 		configService = (ConfigService) context.getBean("configService");
 
-		List<ConfigInfo> configInfos = configService.findAll();
+		List<Config> configInfos = configService.findAll();
 		HashMap configHashMap = new HashMap();
 		configInfos.stream().forEach(configInfo -> {
 			configHashMap.put(configInfo.getConfigName(), configInfo.getConfigValue());

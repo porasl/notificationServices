@@ -1,4 +1,4 @@
-package com.inrik.email;
+package com.porasl.notificationServices.email;
 
 public enum EmailEnum {
   ACCOUNT_ACTIVATION,

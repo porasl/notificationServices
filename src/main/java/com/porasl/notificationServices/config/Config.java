@@ -21,10 +21,10 @@ public class Config {
   public long id;
 
   @Column(unique = true)
-  public boolean configName;
+  public String configName;
   
   @Column(unique = true)
-  public boolean configValue;
+  public String configValue;
 
 }
 

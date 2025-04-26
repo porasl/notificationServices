@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.porasl.notificationServices.config.Config;
-import com.porasl.service.ConfigService;
+import com.porasl.notificationServices.service.ConfigService;
  
 public class Email {
  
@@ -31,10 +31,10 @@ public class Email {
               
         configService = (ConfigService) context.getBean("configService");
   	    
-        List<ConfigInfo> configInfos = configService.findAll();
+        List<Config> configInfos = configService.findAll();
 		HashMap configHashMap = new HashMap();
-		configInfos.stream().forEach(configInfo -> { 
-			configHashMap.put(configInfo.getConfigName(), configInfo.getConfigValue());
+		configInfos.stream().forEach(config -> { 
+			configHashMap.put(config.getConfigName(), config.getConfigValue());
          }); 
 	    
 	    String transportProtocol = (String) configHashMap.get("mail.transport.protocol");
