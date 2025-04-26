@@ -1,12 +1,17 @@
 package com.porasl.notificationServices.service;
 
-import com.porasl.notificationServices.model.NotificationMessage;
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
-public class NotificationService {
+import com.porasl.notificationServices.config.Config;
 
-    public NotificationMessage sendNotification(NotificationMessage message) {
-        return new NotificationMessage("Message from porasl.com, " + message.getContent() + "!");
-    }
+public interface NotificationService {
+
+//    public NotificationMessage sendNotification(NotificationMessage message) {
+//        return new NotificationMessage("Message from porasl.com, " + message.getContent() + "!");
+//    }
+    
+    void save(Config config);
+    List<Config> findAll();
+    void update(Config config);
+    void delete(Config config);
 }
