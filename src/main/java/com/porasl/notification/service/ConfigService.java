@@ -1,8 +1,8 @@
-package com.porasl.notificationServices.service;
+package com.porasl.notification.service;
 
 import java.util.List;
 
-import com.porasl.notificationServices.config.Config;
+import com.porasl.notification.config.Config;
 
 public interface ConfigService {
 

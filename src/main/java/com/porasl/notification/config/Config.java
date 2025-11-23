@@ -1,4 +1,4 @@
-package com.porasl.notificationServices.config;
+package com.porasl.notification.config;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

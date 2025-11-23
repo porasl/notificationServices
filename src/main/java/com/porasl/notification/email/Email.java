@@ -1,4 +1,4 @@
-package com.porasl.notificationServices.email;
+package com.porasl.notification.email;
  
 import java.util.HashMap;
 import java.util.List;
@@ -15,15 +15,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.porasl.notificationServices.config.Config;
-import com.porasl.notificationServices.service.ConfigService;
+import com.porasl.notification.config.Config;
+import com.porasl.notification.service.ConfigService;
  
-public class EmailSmtp {
+public class Email {
  
 	  @Autowired
 	  private static ConfigService configService;
 	  
-	  private static final Logger log = LoggerFactory.getLogger(EmailSmtp.class);
+	  private static final Logger log = LoggerFactory.getLogger(Email.class);
        
       public static void sendSimpleGodaddyEmail(List<String> to, EmailEnum type, String token, String username ) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -33,8 +33,8 @@ public class EmailSmtp {
   	    
         List<Config> configInfos = configService.findAll();
 		HashMap configHashMap = new HashMap();
-		configInfos.stream().forEach(configInfo -> { 
-			configHashMap.put(configInfo.getConfigName(), configInfo.getConfigValue());
+		configInfos.stream().forEach(config -> { 
+			configHashMap.put(config.getConfigName(), config.getConfigValue());
          }); 
 	    
 	    String transportProtocol = (String) configHashMap.get("mail.transport.protocol");

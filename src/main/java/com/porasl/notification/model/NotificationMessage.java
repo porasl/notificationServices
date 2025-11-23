@@ -1,4 +1,4 @@
-package com.porasl.notificationServices.model;
+package com.porasl.notification.model;
 
 public class NotificationMessage {
     private String content;
